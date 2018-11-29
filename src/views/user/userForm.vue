@@ -127,7 +127,6 @@
           let val = this.$route.path
           if (valid) {
             if (this.type ==='create') {
-              alert(this.flagForCreate)
               if (val != '/user' && this.flagForCreate) {
                 this.userForm['orgId'] = this.orgId
                 this.flagForCreate = true
