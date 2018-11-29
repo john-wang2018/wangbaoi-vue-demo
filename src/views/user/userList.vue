@@ -137,7 +137,7 @@
           this.query.orgId = this.orgId
           result = await userApi.pageIngByOrgId(this.query)
         } else {
-          result = await userApi.queryUsers(this.query)
+          result = await userApi.queryUsersByUserName(this.query)
         }
         this.tableData = result.data.list
         this.total = result.data.total
