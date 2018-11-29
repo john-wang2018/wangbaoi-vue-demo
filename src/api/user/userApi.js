@@ -9,6 +9,11 @@ export default {
     let result=await axios.get(`/api/users/actions/query/users/name/?username=${query.userName}&page=${query.pageIndex}&size=${query.size}`)
     return result.data
   },
+  //得到所有用户
+  queryUsers:async (query)=>{
+    let result=await axios.get(`/api/users/?page=${query.pageIndex}&size=${query.size}`)
+    return result.data
+  },
   //通过组织机构id查找该组织下的所有用户
   pageIngByOrgId:async (query)=>{
     let result=await axios.get(`/api/users/actions/query/users/${query.orgId}/?page=${query.pageIndex}&size=${query.size}`)
