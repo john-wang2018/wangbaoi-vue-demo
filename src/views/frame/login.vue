@@ -61,7 +61,7 @@
                 console.log("状态码：" + data.code)
                 //登录成功
                 //用vue路由跳转到后台主界面
-                this.$router.push({path: '/org'});
+                this.$router.push({path: '/home'});
               } else {
                 this.$message({
                   message: data.message,

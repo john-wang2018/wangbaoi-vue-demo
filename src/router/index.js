@@ -10,12 +10,12 @@ const router= new Router({
   base: '/wangbaoli-demo',
   routes: [
     {
-      path: '/login',
+      path: '/',
       name: 'login',
       component: Login
     },
     {
-      path: '/',
+      path: '/home',
       name: 'manager',
       component: Manager,
       children: [{
