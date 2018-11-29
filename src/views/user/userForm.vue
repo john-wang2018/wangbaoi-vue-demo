@@ -78,7 +78,7 @@
     data: function () {
       return {
         text: '请选择部门',
-        flagForCreate: null,
+        flagForCreate: true,
         options: [],
         defaultProps: {children: 'childrens', label: 'orgName', value: 'id'},
         selectedOptions: [],
@@ -127,6 +127,7 @@
           let val = this.$route.path
           if (valid) {
             if (this.type ==='create') {
+              alert(this.flagForCreate)
               if (val != '/user' && this.flagForCreate) {
                 this.userForm['orgId'] = this.orgId
                 this.flagForCreate = true

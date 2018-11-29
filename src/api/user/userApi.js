@@ -2,21 +2,16 @@ import axios from 'axios'
 
 export default {
   //通过用户名模糊查询用户
-  queryUsersByUserName:async (userName)=>{
-    if(userName===null){
-      userName=''
+  queryUsersByUserName:async (query)=>{
+    if(query.userName===null){
+      query.userName=''
     }
-    let result=await axios.get(`/api/users/actions/query/user/name/?username=${userName}`)
+    let result=await axios.get(`/api/users/actions/query/users/name/?username=${query.userName}&page=${query.pageIndex}&size=${query.size}`)
     return result.data
   },
   //通过组织机构id查找该组织下的所有用户
   pageIngByOrgId:async (query)=>{
     let result=await axios.get(`/api/users/actions/query/users/${query.orgId}/?page=${query.pageIndex}&size=${query.size}`)
-    return result.data
-  },
-  //对用户进行分页查询
-  pageIng:async (query)=>{
-    let result=await axios.get(`/api/users/?page=${query.pageIndex}&size=${query.size}`)
     return result.data
   },
   //创建用户
