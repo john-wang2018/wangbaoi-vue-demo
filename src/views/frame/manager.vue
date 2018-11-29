@@ -22,10 +22,8 @@
                    text-color="#fff"
                    active-text-color="#ffd04b"
                    class="el-menu">
-
-            <el-menu-item index="/">首页</el-menu-item>
-            <el-menu-item index="/user">用户列表</el-menu-item>
-            <el-menu-item index="/org">组织列表</el-menu-item>
+            <el-menu-item index="/home/user">用户列表</el-menu-item>
+            <el-menu-item index="/home/org">组织列表</el-menu-item>
           </el-menu>
         </el-aside>
         <el-main>

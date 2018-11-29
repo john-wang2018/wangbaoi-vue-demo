@@ -100,6 +100,7 @@
         user: {},
         total: 10,
         query: {
+          userName:null,
           orgId: null,
           pageIndex: 1,
           size: 8
@@ -116,7 +117,7 @@
       //检查路由，确保正确调用在某个组织中的数据
       checkRoute: function () {
         let val = this.$route.path
-        if (val == '/user') {
+        if (val === '/home/user') {
           this.getUsers()
         }
       },
@@ -125,17 +126,18 @@
         this.tableData = null
         let val = this.$route.path
         let result = null
-        if (this.$store.state.type== 'search') {
+        if (this.$store.state.type=== 'search') {
           if(this.userName!='null' || this.userName != ''){
-            result = await userApi.queryUsersByUserName(this.userName)
+            this.query.userName=this.userName
+            result = await userApi.queryUsersByUserName(this.query)
           }else{
-            result = await userApi.pageIng(this.query)
+            result = await userApi.queryUsersByUserName(this.query)
           }
-        } else if (val != '/user') {
+        } else if (val != '/home/user') {
           this.query.orgId = this.orgId
           result = await userApi.pageIngByOrgId(this.query)
         } else {
-          result = await userApi.pageIng(this.query)
+          result = await userApi.queryUsersByUserName(this.query)
         }
         this.tableData = result.data.list
         this.total = result.data.total
