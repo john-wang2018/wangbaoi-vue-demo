@@ -123,6 +123,12 @@
       },
       //根据页面及调用本方法的对象的到用户数据
       async getUsers() {
+        this.query={
+          userName:null,
+          orgId: null,
+          pageIndex:0,
+          size:0
+        }
         this.tableData = null
         let val = this.$route.path
         let result = null
