@@ -6,7 +6,7 @@ export default {
     if(query.userName===null){
       query.userName=''
     }
-    let result=await axios.get(`/api/users/actions/query/users/name/?username=${query.userName}&page=${query.pageIndex}&size=${query.size}`)
+    let result=await axios.get(`/api/users/actions/query/user/name/?username=${query.userName}&page=${query.pageIndex}&size=${query.size}`)
     return result.data
   },
   //得到所有用户
